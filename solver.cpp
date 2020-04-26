@@ -14,25 +14,12 @@ bool solver::isZero(double num)
 }
 
 double solver::solve(RealVariable& x){
-    double ans =0;
-    x._rem=-x._rem;
-    if(x._power>2){} // throw error
-    if(x._power==2){
-        if(x._rem>0) ans = sqrt(x._rem);
-    }
-    if(x._power==1){
-        ans=x._rem/x._coef;
-    }
-    if(x._power<0){} //throw error.
     
-    x._rem=0;
-    x._coef=1;
-    x._power=1;
-    return ans;
+    return x._coef;
 
 }
 double solver::solve(ComplexVariable& x){
-return x._realPower;
+    return x._realPower;
 
 }
 

@@ -20,7 +20,7 @@ namespace solver
 
         double _coef = 1;
         int _power = 1;
-        double _rem = 0;        
+
     };
     double solve(RealVariable& x);
     
@@ -77,6 +77,7 @@ namespace solver
     const ComplexVariable& operator==(const ComplexVariable& x, const int y); 
     const ComplexVariable& operator==(const RealVariable& x, const ComplexVariable& y);
     const ComplexVariable& operator==(const int y, const ComplexVariable& x);
+
 
     bool isZero (double num);
 
