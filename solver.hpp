@@ -23,6 +23,7 @@ namespace solver
         double _rem = 0;        
     };
     double solve(RealVariable& x);
+    
 
     RealVariable& operator+(const int y,RealVariable& x);
     RealVariable& operator+(RealVariable& x,const int y);
@@ -55,27 +56,27 @@ namespace solver
     };
     double solve(ComplexVariable& x);
 
-    ComplexVariable& operator+(const int y, ComplexVariable& x);
-    ComplexVariable& operator+(ComplexVariable& x, const int y);
-    ComplexVariable& operator+(ComplexVariable& x, ComplexVariable& y);
+    const ComplexVariable& operator+(const int y, const ComplexVariable& x);
+    const ComplexVariable& operator+(const ComplexVariable& x, const int y);
+    const ComplexVariable& operator+(const ComplexVariable& x, const ComplexVariable& y);
     
-    ComplexVariable& operator*(const int y, ComplexVariable& x);
-    ComplexVariable& operator*(ComplexVariable& x, const int y);
-    ComplexVariable& operator*(ComplexVariable& x, ComplexVariable& y);
+    const ComplexVariable& operator*(const int y, const ComplexVariable& x);
+    const ComplexVariable& operator*(const ComplexVariable& x, const int y);
+    const ComplexVariable& operator*(const ComplexVariable& x, const ComplexVariable& y);
     
     const ComplexVariable& operator/(const ComplexVariable& x, const int y);
     const ComplexVariable& operator/(const int y, const ComplexVariable& x);
-    const ComplexVariable& operator/(const ComplexVariable& x, ComplexVariable& y);
+    const ComplexVariable& operator/(const ComplexVariable& x, const ComplexVariable& y);
     
-    const ComplexVariable& operator-(ComplexVariable& x, const int y);
-    const ComplexVariable& operator-(ComplexVariable& x, ComplexVariable& y);
-    const ComplexVariable& operator-(const int y, ComplexVariable& x);
+    const ComplexVariable& operator-(const ComplexVariable& x, const int y);
+    const ComplexVariable& operator-(const ComplexVariable& x, const ComplexVariable& y);
+    const ComplexVariable& operator-(const int y, const ComplexVariable& x);
     
-    const ComplexVariable& operator^(ComplexVariable& x, const int y);
+    const ComplexVariable& operator^(const ComplexVariable& x, const int y);
     
-    ComplexVariable& operator==(ComplexVariable& x, const int y); 
-    const ComplexVariable& operator==(RealVariable& x, const ComplexVariable& y);
-    ComplexVariable& operator==(const int y, ComplexVariable& x);
+    const ComplexVariable& operator==(const ComplexVariable& x, const int y); 
+    const ComplexVariable& operator==(const RealVariable& x, const ComplexVariable& y);
+    const ComplexVariable& operator==(const int y, const ComplexVariable& x);
 
     bool isZero (double num);
 
