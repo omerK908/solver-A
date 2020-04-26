@@ -6,23 +6,24 @@
 
 #pragma once
 #include <iostream>
+#include <complex>
 #define EPS 0.0001
 using namespace std;
+template<typename T>
+double solve(T a);
 
 namespace solver
 {
 
     class RealVariable
     {   
-        
-
     public:
 
         double _coef = 1;
         int _power = 1;
 
     };
-    double solve(RealVariable& x);
+    const double solve(RealVariable& x);
     
 
     RealVariable& operator+(const int y,RealVariable& x);
@@ -54,11 +55,14 @@ namespace solver
         double _imPower;
 
     };
-    double solve(ComplexVariable& x);
+    
+    const std::complex<double> solve(ComplexVariable& x);
 
     const ComplexVariable& operator+(const int y, const ComplexVariable& x);
     const ComplexVariable& operator+(const ComplexVariable& x, const int y);
     const ComplexVariable& operator+(const ComplexVariable& x, const ComplexVariable& y);
+    const ComplexVariable& operator+(const ComplexVariable& x, const std::complex<double>& y);
+    const ComplexVariable& operator+(const std::complex<double>& y, const ComplexVariable& x);
     
     const ComplexVariable& operator*(const int y, const ComplexVariable& x);
     const ComplexVariable& operator*(const ComplexVariable& x, const int y);
@@ -77,6 +81,7 @@ namespace solver
     const ComplexVariable& operator==(const ComplexVariable& x, const int y); 
     const ComplexVariable& operator==(const RealVariable& x, const ComplexVariable& y);
     const ComplexVariable& operator==(const int y, const ComplexVariable& x);
+    const ComplexVariable& operator==(const ComplexVariable y, const ComplexVariable& x);
 
 
     bool isZero (double num);

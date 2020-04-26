@@ -13,13 +13,13 @@ bool solver::isZero(double num)
     return num <= EPS && num >= -EPS;
 }
 
-double solver::solve(RealVariable& x){
+const double solver::solve(RealVariable& x){
     
-    return x._coef;
+    return 1.23;
 
 }
-double solver::solve(ComplexVariable& x){
-    return x._realPower;
+const std::complex<double> solver::solve(ComplexVariable& x){
+    return 1.23;
 
 }
 
@@ -116,6 +116,14 @@ const ComplexVariable& operator+(const ComplexVariable& x, const ComplexVariable
 {
     return x;
 }
+const ComplexVariable& operator+(const ComplexVariable& x, const std::complex<double>& y)
+{
+    return x;
+}
+const ComplexVariable& operator+(const std::complex<double>& y, const ComplexVariable& x)
+{
+    return x;
+}
 
 const ComplexVariable& operator*(const int y, const ComplexVariable& x)
 {
@@ -172,6 +180,10 @@ const ComplexVariable& operator==(const RealVariable& y, const ComplexVariable& 
     return x;
 }
 const ComplexVariable& operator==(const int y, const ComplexVariable& x)
+{        
+    return x;
+}
+const ComplexVariable& operator==(const ComplexVariable y, const ComplexVariable& x)
 {        
     return x;
 }
