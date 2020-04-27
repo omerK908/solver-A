@@ -83,10 +83,8 @@ namespace solver
     const ComplexVariable& operator==(const int y, const ComplexVariable& x);
     const ComplexVariable& operator==(const ComplexVariable y, const ComplexVariable& x);
 
-
     bool isZero (double num);
 
-   
 
     
 } 
